@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+ADIM ADIM PROJECT: <br><br>
+------------------------------------ÖN HAZIRLIK-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br><br>
+1) Intelij Idea'da Yeni bir proje oluştur.<br><br>
+2) pom.xml klasörüne gel. Dependenciesleri ekle. (Hybernate ve jdbc-core için vs. İnternetten maven repocitoryden bulabilirsin.)
+<a href="../pom.xml">hibernate.cfg.xml</a><br><br>
+3) resources-->hibernate.cfg.xml--> klasöründe gel. Database connection settings ve  Other Hibernate configuration properties ayarlamalarını yap
+<a href="hibernate.cfg.xml">hibernate.cfg.xml</a>
+
+<br><br>
+4) PostgreSql de Database oluştur. DİKKAT: hibernate.cfg.xml dosyasındaki ile aynı isimde olmasına dikkat et.<br><br>
+5) java klasörü sağ click-->com.tpe.hotelManagementSystem-->gibi package ismi tanımla. (İçiçe de yazabilirsin tek tek.) <br><br>
+6) Katmanlı mimariye göre packageleri oluştur. Her bir işlev için bir package oluşturmalısın.<br>
+config → Uygulama yapılandırma ayarları (örneğin, Hibernate, Spring, DB bağlantı ayarları).<br>
+exception → Özel hata sınıfları ve uygulamaya özgü istisnalar.<br>
+main → Uygulamanın çalıştırıldığı ana sınıf (örneğin, main metodu içerir).<br>
+model → POJO'lar, Entity sınıfları ve veri modelleri.<br>
+repository → Veritabanı işlemleri (CRUD) için DAO veya JPA sınıfları.<br>
+service → İş mantığı (business logic) ve iş kurallarını içeren servis sınıfları.<br><br>
+------------------------------------PROJE CLASSLARI-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br><br>
+1) config package--> HibernateUtils.java oluştur.<br>
+<a href="com/tpe/hotelManagementSystem/config/HibernateUtils.java"> HibernateUtils.java</a><br><br>
+
+
+2) model package--> Hotel ve Room Pojo klaslarını oluştur. Fields, paramlı ve paramsız const.,  get-set, toString <br>
+@Entitiyleri yaz.
+DİKKAT: Bir otelin birden fazla odası olabilir. Dolayısıyla @OneToMany anatasyonu Hotele yazılır. <br><br>
+
+3) repository package-->Repository INTERFACE oluştur. Genererik yapı tanımlayarak Proje boyunca her klasa uygun olarak kullanacaksın.<br>
+<a href="com/tpe/hotelManagementSystem/repository/Repository.java"> Repository.java</a><br><br>
+repository package-->HotelRepository CLASS oluştur. implements Repository yap.<br>
+<a href="com/tpe/hotelManagementSystem/repository/HotelRepository.java"> HotelRepository.java</a><br><br>
+
+
+</body>
+</html>
